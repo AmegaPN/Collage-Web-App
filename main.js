@@ -17,7 +17,12 @@ Webcam.set(
     jpeg_quality:90
 });
 
-
+recognition.onresult = function(event) 
+{ console.log(event); 
+  Content = event.results[0][0].transcript.toLowerCase();
+  console.log(Content); 
+  if (Content == "selfie") 
+  { speak(); } } 
 
 function speak(){
 
